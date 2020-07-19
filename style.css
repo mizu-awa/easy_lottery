@@ -1,0 +1,212 @@
+﻿@charset "utf-8";/*文字コードの設定*/
+
+/* 全体 */
+#yurayura_lottery{
+	height: 95vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+/* タイトル */
+#yurayura_lottery h1,#yurayura_lottery h2{
+	margin-bottom: 0;
+}
+
+/* 候補一覧入力テキストエリア */
+#yurayura_lottery textarea{
+	width: 100%;
+	height: calc(100% - 20em);
+}
+
+/* 各ページ */
+#yurayura_lottery>div{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*ボタン*/
+#yurayura_lottery>div>a{
+	display: block;
+	width: 100%;
+	border: 1px solid gray;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	margin: 0.5em auto;
+	text-align: center;
+	text-decoration: none;
+}
+#yurayura_lottery>div>a:visited{
+	color: black;
+}
+#yurayura_lottery>div a:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+/*-------------------------抽選箱-------------------------*/
+#yurayura_lottery>div:nth-child(2){
+	display: none;
+}
+/* 抽選箱の箱 */
+#yurayura_lottery>div:nth-child(2)>div:nth-child(4){
+	width: calc( 100vmin - 20em );
+	min-width: 10em;
+	background-color: tomato;
+	margin: 0 auto;
+}
+/* 抽選箱内のテキスト */
+#yurayura_lottery>div:nth-child(2)>div:nth-child(4):before{
+    content:"抽選箱";
+	text-align: center;
+	font-size: 2em;
+    display: block;
+    padding: calc(50% - 1em) 0; /* 高さを幅の100%に固定 */
+}
+/* 飛び出てる紙のくじ */
+#yurayura_lottery>div:nth-child(2)>span{
+	display:block;
+	width: 30vmin;
+	min-width: 7em;
+	padding: 1em 0;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 1em;
+	border:1px solid black;
+	border-bottom-style: none;
+}
+/* くじマウスオーバー時 */
+#yurayura_lottery>div>span:hover{
+	padding-bottom: 2em;
+	margin-top: 0;
+	cursor: pointer;
+}
+/* くじの結果表示 */
+#yurayura_lottery>div:nth-child(2)>div:last-child{
+	position: absolute;
+	border: 1px solid black;
+	top: 25%;
+	left: 25%;
+	font-size: 2em;
+	width: 50%;
+	height: 50%;
+	background-color: white;
+	text-align: center;
+	display: none;
+}
+/* くじの結果文章 */
+#yurayura_lottery>div:nth-child(2)>div:last-child>p{
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+/* くじの結果×ボタン */
+#yurayura_lottery>div:nth-child(2)>div:last-child>a{
+	position: absolute;
+	top: 0;
+	right: 0.25em;
+}
+
+/*------------------------あみだくじ-----------------------*/
+#yurayura_lottery>div:nth-child(3){
+	display: none;
+}
+#yurayura_lottery>div:nth-child(4){
+	display: none;
+}
+
+/* あみだくじ全体 */
+#yurayura_lottery>div:nth-child(4)>div{
+	display: flex;
+}
+/* おそらく上部の名前一覧 */
+#yurayura_lottery>div:nth-child(4)>div:nth-child(3)>div{
+	transform: translateX(50%)
+}
+/* おそらく下部の結果一覧 */
+#yurayura_lottery>div:nth-child(4)>div:nth-child(5)>div{
+	transform: translateX(50%)
+}
+/* 線引くところ */
+#yurayura_lottery>div:nth-child(4)>div:nth-child(4){
+	height: calc(100% - 18em);
+}
+/* 縦の線囲うやつ */
+#yurayura_lottery>div:nth-child(4)>div>div{
+	flex-grow: 1;
+	width: 0;
+	text-align:center;
+}
+/* 縦の線 */
+#yurayura_lottery>div:nth-child(4)>div:nth-child(4)>div{
+	height: 100%;
+	border-right: 2px solid black;
+
+	display: flex;
+	flex-direction: column;
+}
+/* 縦の線最右 */
+#yurayura_lottery>div:nth-child(4)>div>div:last-child{
+	border-right-style: none;
+	flex-grow: 0.5;
+}
+/* 縦の線最左 */
+#yurayura_lottery>div:nth-child(4)>div>div:first-child{
+	flex-grow: 0.5;
+}
+/* 横の線 */
+#yurayura_lottery>div:nth-child(4)>div>div>div{
+	flex-grow: 1;
+	width: 100%;
+	border-bottom: 2px solid black;
+}
+/* 横の線最上 */
+#yurayura_lottery>div:nth-child(4)>div>div:nth-child(2n)>div:first-child{
+	flex-grow: 1.7;
+}
+/* 横の線最下 */
+#yurayura_lottery>div:nth-child(4)>div>div>div:last-child{
+	border-bottom-style: none;
+}
+
+
+
+
+/*------------------直線あみだ--------------------------*/
+#yurayura_lottery>div:nth-child(5){
+	display: none;
+}
+/* エリア全体 */
+#yurayura_lottery>div:nth-child(5)>div{
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - 10em);
+	align-items: center;
+}
+/* 横向き中身 */
+#yurayura_lottery>div:nth-child(5)>div>div{
+	flex-grow: 1;
+	width: 100%;
+	height: 0;
+	display: flex;
+	align-items: center;
+
+}
+/* 横線 */
+#yurayura_lottery>div:nth-child(5)>div>div>div{
+	border-bottom: 2px solid black;
+	height: 2px;
+	flex-grow: 2;
+}
+/* 文字 */
+#yurayura_lottery>div:nth-child(5)>div>div>p{
+	text-align: center;
+	flex-grow: 1;
+	width: 0;
+}
+/* 最後の線 */
+#yurayura_lottery>div:nth-child(5)>div>div:last-child{
+	border-style: none;
+}

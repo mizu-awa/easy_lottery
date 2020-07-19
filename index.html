@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="config.js"></script>
+
+<title>くじだよ</title>
+</head>
+
+<body>
+<div id="all">
+
+<header><!-- ヘッダー-->
+</header>
+
+<main>
+
+	<!--ユーザが操作してもよい領域ここから-->
+	<div id="user_change">
+
+		<div id="yurayura_lottery">
+			<div>
+				<h1>くじ</h1>
+				<h2>選択肢の記入</h2>
+				<textarea>選択肢を改行で区切って記入</textarea>
+				<a onclick="y_getLotteryChoices();y_lot_release = true;y_lottery_move(0,1);">くじ引き（箱に戻さないタイプ）</a>
+				<a onclick="y_getLotteryChoices();y_lot_release = false;y_lottery_move(0,1);">くじ引き（箱に戻すタイプ）</a>
+				<a onclick="y_lottery_move(0,2);">あみだくじ</a>
+			</div>
+
+
+
+			<div>
+				<h1>くじびき</h1>
+				<h2>抽選箱</h2>
+				<span onclick="y_lottery_kuji();">くじを引く<br>（クリック）</span>
+				<div></div>
+				<a onclick="y_lottery_move(1,0);y_lottery_kuji_delete();">もどる</a>
+				<div id="y_lot_result"><a onclick="y_lottery_kuji_delete();">×</a><p id="y_lot_result_text">くじの結果</p></div>
+			</div>
+
+
+
+			<div>
+				<h1>あみだくじ</h1>
+				<h2>参加者の記入</h2>
+				<textarea rows=20>参加者を改行で区切って記入</textarea>
+				<a onclick="var_y_lottery_amida(true);y_lottery_move(2,3);">結果（あみだ）</a>
+				<a onclick="var_y_lottery_amida(false);y_lottery_move(2,4);">結果（直線）</a>
+				<a onclick="y_lottery_move(2,0);">もどる</a>
+			</div>
+
+
+
+			<div>
+				<h1>あみだくじ</h1>
+				<h2>結果</h2>
+				<div id="y_lot_amida_entrant">
+				</div>
+				<div id="y_lot_amida_middle">
+					<div></div>
+				</div>
+				<div id="y_lot_amida_choices">
+				</div>
+				<a onclick="y_lottery_move(3,2);">もどる</a>
+			</div>
+
+
+
+			<div>
+				<h1>あみだくじ</h1>
+				<h2>結果</h2>
+				<div id="y_lot_amida_line">
+				</div>
+				<a onclick="y_lottery_move(4,2);">もどる</a>
+			</div>
+		</div>
+	</div>
+	<!--ここまで-->
+	<div id="access_counter"></div>
+
+</main>
+
+</div>
+</body>
+
+</html>
